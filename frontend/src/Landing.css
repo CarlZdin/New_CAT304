@@ -1,0 +1,145 @@
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f5fb;
+}
+
+.main-text-container {
+  /* width: 350px;
+    height: 408.58px; */
+  position: absolute;
+  left: 125px;
+  top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+}
+
+.line-container {
+  width: 350px;
+  height: 75.58px;
+  position: absolute; /* Added position absolute */
+  left: 125px;
+  display: flex;
+  /* Other styles */
+}
+
+.main-text {
+  height: 220.58px;
+  width: 700px;
+  position: relative;
+}
+
+.discover-text {
+  position: absolute;
+  color: black;
+  font-size: 72px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  line-height: 79.2px;
+  word-wrap: break-word;
+}
+
+.jobs-text {
+  color: #5060ff;
+  font-size: 72px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  line-height: 79.2px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 160px;
+  left: 0;
+}
+
+.sub-text {
+  width: 521px;
+  opacity: 0.7;
+  top: 250px;
+  color: black;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+  word-wrap: break-word;
+}
+
+.register-button {
+  width: 209px;
+  height: 47px;
+  padding: 8px 40px;
+  position: absolute;
+  left: 125px;
+  top: 640px;
+  background: linear-gradient(273deg, #2939db 0%, #5e69e7 100%);
+  box-shadow: 0px 10px 40px rgba(80, 96, 255, 0.25);
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 28.8px;
+  letter-spacing: 0.08px;
+  word-wrap: break-word;
+}
+
+.header-container {
+  width: 1380px; /* Span the full width of the parent */
+  height: 50px;
+  position: absolute;
+  left: 60px; /* Align with the left edge of the page */
+  top: 30px; /* Position near the top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Adjust padding */
+}
+
+.brand-logo {
+  height: auto;
+  width: 138px; /* Ensure the logo is visible */
+}
+
+.login-signup-container {
+  position: absolute;
+  right: 60px; /* Adjust the right position as needed */
+  top: 0px; /* Adjust the top position as needed */
+  display: inline-block;
+  gap: 55px;
+}
+
+.login-text,
+.signup-text {
+  width: auto; /* Allow the width to adjust based on content */
+  height: 30px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 25.6px;
+  word-wrap: break-word;
+}
+
+.login-text {
+  color: #4640de;
+  background: transparent; /* Set the background to transparent */
+}
+
+.signup-text {
+  color: white;
+  background: #4640de;
+}
+
+.link-style {
+  text-decoration: none;
+}
