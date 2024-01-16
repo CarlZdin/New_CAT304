@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./assets/pie-opdLOGO.png"; // Adjust the path as necessary
 import "./Landing.css";
 import { Link } from "react-router-dom";
-import vectorline from "C:/Users/user/Desktop/React/PIE-OPD-new/src/assets/Linevector.png";
+import vectorline from "./assets/Linevector.png";
 
 function Landing() {
   return (

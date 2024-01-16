@@ -3,8 +3,8 @@ import "./JobDesc.css";
 import "./Sidebar.css"; // Make sure to create this CSS file
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar"; // Import the Sidebar component
-import BackIcon from "C:/Users/User/Desktop/React/PIE-OPD-new/src/assets/BackIcon.png";
-import UserImage from "C:/Users/user/Desktop/React/PIE-OPD-new/src/assets/UserImage.png";
+import BackIcon from "./assets/BackIcon.png";
+import UserImage from "./assets/UserImage.png";
 
 function JobDesc() {
   return (

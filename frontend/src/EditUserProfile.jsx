@@ -1,9 +1,9 @@
 import React from "react";
 import "./UserProfile.css";
 import Sidebar from "./Sidebar";
-import UserImage from "C:/Users/user/Desktop/React/PIE-OPD-new/src/assets/UserImage.png";
-import EmailIcon from "C:/Users/user/Desktop/React/PIE-OPD-new/src/assets/EmailIcon.png";
-import WheelchairIcon from "C:/Users/user/Desktop/React/PIE-OPD-new/src/assets/WheelchairIcon.png";
+import UserImage from "./assets/UserImage.png";
+import EmailIcon from "./assets/EmailIcon.png";
+import WheelchairIcon from "./assets/WheelchairIcon.png";
 
 function EditUserProfile() {
   return (

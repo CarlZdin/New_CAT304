@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "C:/Users/user/Desktop/React/PIE-OPD-new/src/App.jsx"; // Ensure this path is correct
+import App from "./App.jsx"; // Ensure this path is correct
 
 ReactDOM.render(
   <React.StrictMode>
