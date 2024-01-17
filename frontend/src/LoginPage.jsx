@@ -1,18 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./assets/pie-opdLOGO.png";
 import disabilitiesImage from "./assets/Disabilities.png";
 import "./LoginPage.css"; // Ensure this path is correct
 import { Link } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user_email, setEmail] = useState("");
+  const [user_password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // Leave the body of this function empty for now
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({
+        email: user_email,
+        password: user_password,
+      }),
+    });
+
+    if (response.ok){
+      const userData = await response.json();
+    } else{
+
+      setError("Unable to log in. Please check your credentials.")
+    }
+
   };
+
 
   return (
     <div className="login-page">
@@ -39,14 +57,14 @@ function Login() {
             <input
               type="email"
               className="input-field"
-              value={email}
+              value={user_email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
             />
             <input
               type="password"
               className="input-field"
-              value={password}
+              value={user_password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />

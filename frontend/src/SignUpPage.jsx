@@ -6,29 +6,27 @@ import "./LoginPage.css"; // Ensure this path is correct
 import { Link } from "react-router-dom";
 
 function SignUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [role_id, setRole] = useState(null);
+  const [user_email, setEmail] = useState("");
+  const [user_name, setUsername] = useState("");
+  const [user_password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  // Add more states as needed (e.g., username)
   const [error, setError] = useState("");
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
-    // if (password !== confirmPassword) {
-    //   setError("Passwords do not match.");
-    //   return;
-    // }
-    // try {
-    //   // Axios call to your backend signup endpoint
-    //   const response = await axios.post("http://localhost:3000/signup", {
-    //     email,
-    //     password,
-    //   });
-    //   // Handle response
-    //   setError("");
-    // } catch (err) {
-    //   setError(err.response ? err.response.data.message : "Signup failed");
-    // }
+    fetch('http://localhost:3000/addUser',{
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ role: role_id, email: user_email, username: user_name, password:user_password, confirmPassword:confirmPassword }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.log("Error:", error));
+    if(user_password !== confirmPassword) {
+      setError("Password do not match");
+      return;
+    }
   };
 
   return (
@@ -53,17 +51,28 @@ function SignUp() {
         <div className="welcome-text">Get More Opportunities</div>
         <div className="login-container">
           <form onSubmit={handleSignUp}>
+            <div onChange={e => setRole(e.target.value === "employee")}>
+            <input type="radio" value="Applicant" name="role" /> Applicant
+            <input type="radio" value="employee" name="role" /> Employee
+            </div>
             <input
               type="email"
               className="input-field"
-              value={email}
+              value={user_email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
             />
             <input
+              type="username"
+              className="input-field"
+              value={user_name}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+            />
+            <input
               type="password"
               className="input-field"
-              value={password}
+              value={user_password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />

@@ -10,6 +10,7 @@ import Feedback from "./FeedbackPage";
 import TestApp from "./TestApp";
 import JobListing from "./JobListing";
 import JobDesc from "./JobDesc";
+import Try from "./try";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/testapp" element={<TestApp />} />
         <Route path="/joblisting" element={<JobListing />} />
         <Route path="/jobdesc" element={<JobDesc />} />
+        <Route path="/try" element={<Try />} />
       </Routes>
     </Router>
   );
