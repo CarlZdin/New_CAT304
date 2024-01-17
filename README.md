@@ -7,7 +7,8 @@ git clone https://github.com/CarlZdin/New_CAT304.git
 ```
 
 Open VS CODE at that file location.
-----------------------------------------------------------------
+
+---------------------------------------------------------------
 
 ## frontend(React-Vite)
 At terminal write
