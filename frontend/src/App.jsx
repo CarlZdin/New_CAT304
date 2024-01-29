@@ -11,6 +11,8 @@ import TestApp from "./TestApp";
 import JobListing from "./JobListing";
 import JobDesc from "./JobDesc";
 import Try from "./try";
+import Admin from "./Admin";
+import FeedbackAdmin from "./FeedbackAdmin";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/joblisting" element={<JobListing />} />
         <Route path="/jobdesc" element={<JobDesc />} />
         <Route path="/try" element={<Try />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/feedbackadmin" element={<FeedbackAdmin />} />
       </Routes>
     </Router>
   );
