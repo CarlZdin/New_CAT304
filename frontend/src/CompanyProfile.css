@@ -188,8 +188,7 @@
   margin-right: 15px; /* Space between icon and text */
 }
 
-.edit-profile-button,
-button {
+.edit-profile-button {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -210,22 +209,4 @@ button {
 
 .link-style {
   text-decoration: none;
-}
-
-/* Style for input fields in edit mode */
-input[type="text"] {
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: 16px;
-  background-color: #fff; /* Set the background color you prefer */
-}
-
-/* Style for the textarea in edit mode */
-textarea {
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  background-color: #fff; /* Set the background color you prefer */
-  resize: vertical; /* Allow vertical resizing of textarea */
 }

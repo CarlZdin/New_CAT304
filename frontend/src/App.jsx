@@ -13,6 +13,11 @@ import JobDesc from "./JobDesc";
 import Try from "./try";
 import Admin from "./Admin";
 import FeedbackAdmin from "./FeedbackAdmin";
+import HomeCompany from "./HomeCompany";
+import PostJobListing from "./PostJobListing";
+import CompanyProfile from "./CompanyProfile";
+import EditCompanyProfile from "./EditCompanyProfile";
+
 
 function App() {
   return (
@@ -31,6 +36,10 @@ function App() {
         <Route path="/try" element={<Try />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/feedbackadmin" element={<FeedbackAdmin />} />
+        <Route path="/homecompany" element={<HomeCompany />} />
+        <Route path="/postjob" element={<PostJobListing />} />
+        <Route path="/companyprofile" element={<CompanyProfile />} />
+        <Route path="/editcompanyprofile" element={<EditCompanyProfile />} />
       </Routes>
     </Router>
   );

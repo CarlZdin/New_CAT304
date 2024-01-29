@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import "./JobListing.css";
-import Sidebar from "./Sidebar";
+import "./PostJobListing.css";
+import SidebarCompany from "./SidebarCompany";
 import debounce from "lodash.debounce"; // Import debounce function
 import { Link } from "react-router-dom";
 
@@ -101,7 +101,7 @@ const mockJobListings = [
   },
 ];
 
-function JobListing() {
+function PostJobListing() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("All");
   const [filteredJobs, setFilteredJobs] = useState(mockJobListings);
@@ -138,11 +138,11 @@ function JobListing() {
   return (
     <div className="joblisting-container">
       <Helmet>{/* ... Helmet tags for SEO ... */}</Helmet>
-      <Sidebar />
+      <SidebarCompany />
 
       <div className="joblisting-main-content">
         <div className="joblisting-header-container">
-          <div className="title-text">Find Jobs</div>
+          <div className="title-text">Post A Job</div>
           <div className="joblisting-header-function">
             <div className="search-bar-container">
               <input
@@ -211,4 +211,4 @@ function JobListing() {
   );
 }
 
-export default JobListing;
+export default PostJobListing;
