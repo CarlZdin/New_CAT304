@@ -67,7 +67,7 @@ function SignUp() {
               className="input-field"
               value={user_name}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Username"
+              placeholder="Full Name"
             />
             <input
               type="password"
