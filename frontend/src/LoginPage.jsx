@@ -14,7 +14,7 @@ function Login() {
     const response = await fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
-        'Content-Type' : 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: user_email,
@@ -22,15 +22,12 @@ function Login() {
       }),
     });
 
-    if (response.ok){
+    if (response.ok) {
       const userData = await response.json();
-    } else{
-
-      setError("Unable to log in. Please check your credentials.")
+    } else {
+      setError("Unable to log in. Please check your credentials.");
     }
-
   };
-
 
   return (
     <div className="login-page">
@@ -54,6 +51,10 @@ function Login() {
         <div className="welcome-text">Welcome Back, Dude</div>
         <div className="login-container">
           <form onSubmit={handleLogin}>
+            <div onChange={(e) => setRole(e.target.value === "employee")}>
+              <input type="radio" value="Applicant" name="role" /> Applicant
+              <input type="radio" value="employee" name="role" /> Employee
+            </div>
             <input
               type="email"
               className="input-field"

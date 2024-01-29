@@ -11,6 +11,10 @@ import TestApp from "./TestApp";
 import JobListing from "./JobListing";
 import JobDesc from "./JobDesc";
 import Try from "./try";
+import HomeCompany from "./HomeCompany";
+import PostJobListing from "./PostJobListing";
+import CompanyProfile from "./CompanyProfile";
+import EditCompanyProfile from "./EditCompanyProfile";
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
         <Route path="/joblisting" element={<JobListing />} />
         <Route path="/jobdesc" element={<JobDesc />} />
         <Route path="/try" element={<Try />} />
+        <Route path="/homecompany" element={<HomeCompany />} />
+        <Route path="/postjob" element={<PostJobListing />} />
+        <Route path="/companyprofile" element={<CompanyProfile />} />
+        <Route path="/editcompanyprofile" element={<EditCompanyProfile />} />
       </Routes>
     </Router>
   );

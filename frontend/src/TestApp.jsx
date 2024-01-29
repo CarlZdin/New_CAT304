@@ -1,15 +1,49 @@
-import { Suspense } from "react";
-import Home from "./Home";
+import { useState } from "react";
 
-export default function TestApp({ testapp }) {
+export default function TestApp() {
+  const [isEditing, setIsEditing] = useState(false);
+  const [firstName, setFirstName] = useState("John");
+  const [lastName, setLastName] = useState("Cena");
+
   return (
-    <div>
-      <h1>Test App</h1>
-      <Suspense fallback={<Loading />}></Suspense>
-    </div>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setIsEditing(!isEditing);
+      }}
+    >
+      <label>
+        First name:
+        {isEditing ? (
+          <input
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+          />
+        ) : (
+          <b>{firstName}</b>
+        )}
+      </label>
+      <label>
+        Last name:
+        {isEditing ? (
+          <input
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+          />
+        ) : (
+          <b>{lastName}</b>
+        )}
+      </label>
+      <button type="submit">{isEditing ? "Save" : "Edit"} Profile</button>
+      <p>
+        <i>
+          Hello, {firstName} {lastName} !
+        </i>
+      </p>
+    </form>
   );
-
-  function Loading() {
-    return <h2>🌀 Loading.. </h2>;
-  }
 }
