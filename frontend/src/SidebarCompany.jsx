@@ -63,7 +63,7 @@ function SidebarCompany() {
           <img src={warningicon} alt="Warning Icon" className="sidebar-icon" />
           <div className="sidebar-text">
             <Link
-              to="/feedback"
+              to="/companyfeedback"
               className="link-style"
               style={{ color: "black" }}
             >
