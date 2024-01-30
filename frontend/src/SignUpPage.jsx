@@ -53,7 +53,7 @@ function SignUp() {
           <form onSubmit={handleSignUp}>
             <div onChange={e => setRole(e.target.value === "employee")}>
             <input type="radio" value="Applicant" name="role" /> Applicant
-            <input type="radio" value="employee" name="role" /> Employee
+            <input type="radio" value="employee" name="role" /> Employer
             </div>
             <input
               type="email"
@@ -67,7 +67,7 @@ function SignUp() {
               className="input-field"
               value={user_name}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Full Name"
+              placeholder="Username"
             />
             <input
               type="password"
