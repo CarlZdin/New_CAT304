@@ -44,6 +44,12 @@ function PostJobListing() {
     .catch((error) => {
       console.error('Error:', error);
     });
+    setJobs([...jobs, job]);
+      setJob({
+        title: "",
+        description: "",
+        location: "",
+      });
 };
 
   const handleDelete = (index) => {
