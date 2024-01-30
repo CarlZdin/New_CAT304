@@ -8,6 +8,7 @@ function Login() {
   const [user_email, setEmail] = useState("");
   const [user_password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [role_id, setRole] = useState(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -51,10 +52,11 @@ function Login() {
         <div className="welcome-text">Welcome Back, Dude</div>
         <div className="login-container">
           <form onSubmit={handleLogin}>
-            {/* <div onChange={(e) => setRole(e.target.value === "employee")}>
+            <div onChange={(e) => setRole(e.target.value)}>
               <input type="radio" value="Applicant" name="role" /> Applicant
-              <input type="radio" value="employee" name="role" /> Employee
-            </div> */}
+              <input type="radio" value="employer" name="role" /> Employer
+            </div>
+
             <input
               type="email"
               className="input-field"
@@ -72,12 +74,13 @@ function Login() {
             {error && <p className="error-message">{error}</p>}
             <button type="submit" className="login-btn">
               <Link
-                to="/home"
+                to={role_id === "employer" ? "/homecompany" : "/home"}
                 className="link-style"
                 style={{ color: "white" }}
               >
                 Login
               </Link>
+
             </button>
           </form>
           Don't have an account? <Link to="/signup">Sign Up</Link>
