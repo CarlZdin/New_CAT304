@@ -45,7 +45,6 @@ function Feedback() {
             <button
               type="submit"
               className="feedback-submit-button"
-              disabled={feedback}
             >
               Submit
             </button>
