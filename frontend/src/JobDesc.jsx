@@ -4,7 +4,7 @@ import "./Sidebar.css"; // Make sure to create this CSS file
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar"; // Import the Sidebar component
 import BackIcon from "./assets/BackIcon.png";
-import UserImage from "./assets/UserImage.png";
+import companylogo from "./assets/companylogo.jpg";
 
 function JobDesc() {
   const applyjobbutton = ({ mailto, label }) => {
@@ -40,7 +40,11 @@ function JobDesc() {
         <div className="jobdesc-bodycontent">
           <div className="jobinfo">
             <div className="company-image-container">
-              <img src={UserImage} alt="Company" className="jobcompany-image" />
+              <img
+                src={companylogo}
+                alt="Company"
+                className="jobcompany-image"
+              />
             </div>
 
             <div className="jobdescinfo">
