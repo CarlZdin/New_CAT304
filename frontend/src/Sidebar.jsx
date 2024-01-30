@@ -37,7 +37,15 @@ function Sidebar() {
         </div>
         <div className="sidebar-item">
           <img src={bagicon} alt="Bag Icon" className="sidebar-icon" />
-          <div className="sidebar-text">My Applications </div>
+          <div className="sidebar-text">
+            <Link
+              to="/myapplication"
+              className="link-style"
+              style={{ color: "black" }}
+            >
+              My Applications
+            </Link>{" "}
+          </div>
         </div>
 
         <div className="sidebar-item">

@@ -41,7 +41,15 @@ function SidebarCompany() {
         </div>
         <div className="sidebar-item">
           <img src={bagicon} alt="Bag Icon" className="sidebar-icon" />
-          <div className="sidebar-text">Job Applications </div>
+          <div className="sidebar-text">
+            <Link
+              to="/viewapplication"
+              className="link-style"
+              style={{ color: "black" }}
+            >
+              Job Applications
+            </Link>
+          </div>
         </div>
 
         <div className="sidebar-item">
