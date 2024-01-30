@@ -142,3 +142,31 @@ label {
   font-weight: bold;
   font-family: "Poppins", sans-serif;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inside the .modal-content class */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Add a new class to control the size of the image */
+.modal-image {
+  max-width: 100%; /* Adjust the maximum width as needed */
+
+  display: block; /* Ensures the image doesn't have extra space around it */
+  margin: 0 auto; /* Centers the image horizontally */
+  height: 85vh;
+}

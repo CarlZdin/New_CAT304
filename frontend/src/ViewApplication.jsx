@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import "./ViewApplication.css";
 import SidebarCompany from "./SidebarCompany";
-import debounce from "lodash.debounce"; // Import debounce function
-import { Link } from "react-router-dom";
+import ResumeSample from "./assets/ResumeSample.png"; // Adjust the path as needed
 
 const sampleLogoUrl =
   "https://static.vecteezy.com/system/resources/previews/000/395/417/original/modern-company-logo-design-vector.jpg";
@@ -29,8 +28,27 @@ const mockApplication = [
   },
 ];
 
+function Modal({ isOpen, onClose, imageSrc }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {/* Apply the new modal-image class to control image size */}
+        <img src={imageSrc} alt="Modal" className="modal-image" />
+        <button onClick={onClose}>Close</button>
+      </div>
+    </div>
+  );
+}
+
 function ViewApplication() {
   const [filteredJobs, setFilteredJobs] = useState(mockApplication);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   const performSearch = () => {
     const lowercasedTerm = searchTerm.toLowerCase();
@@ -74,11 +92,18 @@ function ViewApplication() {
                   {job.company} - {job.location}
                 </p>
               </div>
-              <button className="view-job-button">View Application</button>
+              <button className="view-job-button" onClick={toggleModal}>
+                View Application
+              </button>
             </div>
           ))}
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={toggleModal}
+        imageSrc={ResumeSample}
+      />
     </div>
   );
 }
