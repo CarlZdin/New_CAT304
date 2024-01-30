@@ -35,10 +35,10 @@ function Sidebar() {
             </Link>
           </div>
         </div>
-        <div className="sidebar-item">
+        {/* <div className="sidebar-item">
           <img src={bagicon} alt="Bag Icon" className="sidebar-icon" />
           <div className="sidebar-text">My Applications </div>
-        </div>
+        </div> */}
 
         <div className="sidebar-item">
           <img src={homeicon} alt="Home Icon" className="sidebar-icon" />
