@@ -10,10 +10,11 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey)
 app.use(cors());
 app.use(bodyParser.json());
 
+// LOGIN PAGE
 app.post('/login', async(req, res) => {
     const { email, password } = req.body;
 
-    const {User, error} = await supabase.auth.signInWithIdToken({
+    const {User, error} = await supabase.auth.signIn({
         user_email: email,
         user_password: password
     });
@@ -26,7 +27,7 @@ app.post('/login', async(req, res) => {
 })
 
 
-
+//SIGN UP PAGE
 app.post('/addUser', async (req, res) => {
     const { role, username, email, password } = req.body;
     const { data, error } = await supabase
