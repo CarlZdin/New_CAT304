@@ -28,6 +28,12 @@ function FeedbackCompany() {
           <div className="title-text">Feedback</div>
         </div>
         <div className="feedback-details">
+          <div className="feedback-text-h">
+            Submit your feedback
+            <div className="feedback-text-h2">
+              The following is required and will only be shared with PIE-OPD
+            </div>
+          </div>
           <form onSubmit={handleSubmit}>
             <textarea
               className="feedbacktext"
