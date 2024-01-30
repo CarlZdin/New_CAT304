@@ -47,8 +47,7 @@
 .jobcompany-image {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  border: 8px solid black;
+  border: 8px #5e69e7;
   background: #c4c4c4;
 }
 
@@ -156,7 +155,7 @@
 }
 
 li:before {
-  content: url("C:/Users/User/Desktop/React/PIE-OPD-new/src/assets/check.svg");
+  content: url("assets/check.svg");
   display: inline-block;
   vertical-align: middle;
   /* If you want some space between icon and text: */
