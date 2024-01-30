@@ -17,7 +17,7 @@ import HomeCompany from "./HomeCompany";
 import PostJobListing from "./PostJobListing";
 import CompanyProfile from "./CompanyProfile";
 import EditCompanyProfile from "./EditCompanyProfile";
-
+import FeedbackCompany from "./FeedbackPageCompany";
 
 function App() {
   return (
@@ -40,6 +40,7 @@ function App() {
         <Route path="/postjob" element={<PostJobListing />} />
         <Route path="/companyprofile" element={<CompanyProfile />} />
         <Route path="/editcompanyprofile" element={<EditCompanyProfile />} />
+        <Route path="/companyfeedback" element={<FeedbackCompany />} />
       </Routes>
     </Router>
   );
