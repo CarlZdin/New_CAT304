@@ -51,10 +51,10 @@ function Login() {
         <div className="welcome-text">Welcome Back, Dude</div>
         <div className="login-container">
           <form onSubmit={handleLogin}>
-            <div onChange={(e) => setRole(e.target.value === "employee")}>
+            {/* <div onChange={(e) => setRole(e.target.value === "employee")}>
               <input type="radio" value="Applicant" name="role" /> Applicant
               <input type="radio" value="employee" name="role" /> Employee
-            </div>
+            </div> */}
             <input
               type="email"
               className="input-field"
