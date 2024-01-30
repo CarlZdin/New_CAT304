@@ -5,19 +5,23 @@ import { Link } from "react-router-dom";
 
 function Feedback() {
   const [feedback, setFeedback] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Assuming you have a Supabase instance set up
-    // You would replace this with your actual Supabase API calls
-    // For example:
-    // await supabase.from('feedback').insert({ message: feedback });
-
-    // Add any additional logic or API calls here
-
-    // Clear the feedback field after submission
-    setFeedback("");
+    if (!feedback){
+      setError("This field is empty.");
+      return;
+    }
+    fetch('http://localhost:3000/addFeedback', {
+      method: 'POST',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify({ feedback: feedback }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .then(() => setFeedback(''))
+    .catch((error) => console.log("Error:", error));
   };
 
   return (
@@ -37,10 +41,11 @@ function Feedback() {
               rows="4"
               cols="50"
             />
+            {error && <p className="error-text">{error}</p>}
             <button
               type="submit"
               className="feedback-submit-button"
-              disabled={!feedback.trim()}
+              disabled={feedback}
             >
               Submit
             </button>

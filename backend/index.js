@@ -44,6 +44,20 @@ app.post('/addUser', async (req, res) => {
     }
 });
 
+//Add feedback
+app.post('/addFeedback', async(req ,res) => {
+    const { feedback } = req.body;
+    const { data, error } = await supabase
+    .from('Feedback')
+    .insert([{ feedback_desc: feedback },]);
+    if (error) {
+        console.error('Error submitting feedback: ', error);
+        res.status(500).send("Error submitting feedback.")
+    } else {
+        console.log('Feedback submitted: ', data);
+        res.send(data);
+    }
+});
 
 app.get('/getData', async (req, res) => {
     const {data,error} = await supabase
