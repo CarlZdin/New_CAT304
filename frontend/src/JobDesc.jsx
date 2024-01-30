@@ -7,6 +7,20 @@ import BackIcon from "./assets/BackIcon.png";
 import UserImage from "./assets/UserImage.png";
 
 function JobDesc() {
+  const applyjobbutton = ({ mailto, label }) => {
+    return (
+      <Link
+        to="#"
+        onClick={(e) => {
+          window.location.href = mailto;
+          e.preventDefault();
+        }}
+      >
+        {label}
+      </Link>
+    );
+  };
+
   return (
     <div className="jobdesc-container">
       <Sidebar />
@@ -39,7 +53,12 @@ function JobDesc() {
               </div>
             </div>
             <div className="applyjob-buttoncontainer">
-              <div className="applyjob-button">Apply</div>
+              <div
+                className="applyjob-button"
+                onClick={() => (window.location = "mailto:yourmail@domain.com")}
+              >
+                Apply
+              </div>
             </div>
           </div>
 
