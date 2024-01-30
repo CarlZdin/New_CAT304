@@ -39,10 +39,10 @@ function SidebarCompany() {
             </Link>
           </div>
         </div>
-        <div className="sidebar-item">
+        {/* <div className="sidebar-item">
           <img src={bagicon} alt="Bag Icon" className="sidebar-icon" />
           <div className="sidebar-text">Job Applications </div>
-        </div>
+        </div> */}
 
         <div className="sidebar-item">
           <div className="sidebar-text">SETTINGS</div>
