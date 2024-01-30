@@ -44,6 +44,23 @@ app.post('/addUser', async (req, res) => {
     }
 });
 
+//Post Job
+app.post('/PostJob', async (req, res) => {
+    const { jobTitle, desc, location } = req.body;
+    const { data, error } = await supabase
+        .from('Job')
+        .insert([
+            { job_name: jobTitle, job_type: desc, job_location: location },
+        ]);
+    if (error) {
+        console.error('Error inserting job:', error);
+        res.status(500).send("Error inserting job.");
+    } else {
+        console.log('Job inserted:', data);
+        res.send(data);
+    }
+});
+
 //Add feedback
 app.post('/addFeedback', async(req ,res) => {
     const { feedback } = req.body;

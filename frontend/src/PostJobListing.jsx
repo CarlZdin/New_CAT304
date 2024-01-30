@@ -19,14 +19,32 @@ function PostJobListing() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setJobs([...jobs, job]);
-    setJob({
-      title: "",
-      description: "",
-      location: "",
+  e.preventDefault();
+
+  fetch('http://localhost:3000/PostJob', {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      jobTitle: job.title,
+      desc: job.description,
+      location: job.location,
+    }),
+  })
+    .then(response => response.json())
+    .then(() => {
+      setJobs([...jobs, job]);
+      setJob({
+        title: "",
+        description: "",
+        location: "",
+      });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
-  };
+};
 
   const handleDelete = (index) => {
     const updatedJobs = [...jobs];

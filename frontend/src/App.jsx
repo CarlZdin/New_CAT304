@@ -19,6 +19,8 @@ import CompanyProfile from "./CompanyProfile";
 import EditCompanyProfile from "./EditCompanyProfile";
 import FeedbackCompany from "./FeedbackPageCompany";
 import GenerateResume from "./GenerateResume";
+import MyApplication from "./MyApplication";
+import ViewApplication from "./ViewApplication";
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
         <Route path="/editcompanyprofile" element={<EditCompanyProfile />} />
         <Route path="/companyfeedback" element={<FeedbackCompany />} />
         <Route path="/resume" element={<GenerateResume />} />
+        <Route path="/myapplication" element={<MyApplication />} />
+        <Route path="/viewapplication" element={<ViewApplication />} />
       </Routes>
     </Router>
   );
