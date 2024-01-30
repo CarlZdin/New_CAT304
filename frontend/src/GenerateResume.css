@@ -1,0 +1,78 @@
+.resume-container {
+  display: flex;
+  background: #f5f5fb;
+  height: 100vh;
+  width: 1120px;
+  left: 5px; /* Align with the left edge of the page */
+}
+
+.resume-header-container {
+  width: 1120px; /* Span the full width of the parent */
+  height: 50px;
+  position: absolute;
+  left: 290px; /* Align with the left edge of the page */
+  top: 30px; /* Position near the top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Adjust padding */
+  box-shadow: 0px -1px 0px #d6ddeb inset;
+}
+
+.resume-main-content {
+  flex-grow: 1;
+  padding-left: 110px;
+  margin-top: 120px;
+}
+
+.title-text {
+  color: #25324b;
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+}
+
+.resume-submit-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.94px;
+  background-color: #4640de; /* Button background color */
+  color: white; /* Button text color */
+  border: 1px solid #4640de; /* Border color */
+  border-radius: 4px; /* Border radius */
+  padding: 10px 20px; /* Padding */
+  cursor: pointer; /* Add pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.resume-submit-button:hover {
+  background-color: white;
+  color: #4640de;
+}
+
+.link-style {
+  text-decoration: none;
+}
+
+.resumecontainer {
+  --color: #239ce2;
+  min-width: 700px;
+  max-width: 850px;
+  margin: 0 auto;
+  flex: 1.2;
+  height: fit-content;
+  min-height: 900px;
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* ... (rest of the styles remain unchanged) */

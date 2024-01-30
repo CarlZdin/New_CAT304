@@ -18,6 +18,7 @@ import PostJobListing from "./PostJobListing";
 import CompanyProfile from "./CompanyProfile";
 import EditCompanyProfile from "./EditCompanyProfile";
 import FeedbackCompany from "./FeedbackPageCompany";
+import GenerateResume from "./GenerateResume";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/companyprofile" element={<CompanyProfile />} />
         <Route path="/editcompanyprofile" element={<EditCompanyProfile />} />
         <Route path="/companyfeedback" element={<FeedbackCompany />} />
+        <Route path="/resume" element={<GenerateResume />} />
       </Routes>
     </Router>
   );

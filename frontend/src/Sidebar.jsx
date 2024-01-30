@@ -42,7 +42,15 @@ function Sidebar() {
 
         <div className="sidebar-item">
           <img src={homeicon} alt="Home Icon" className="sidebar-icon" />
-          <div className="sidebar-text">Resume</div>
+          <div className="sidebar-text">
+            <Link
+              to="/resume"
+              className="link-style"
+              style={{ color: "black" }}
+            >
+              Resume
+            </Link>
+          </div>
         </div>
 
         <div className="sidebar-item">
