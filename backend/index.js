@@ -10,21 +10,24 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey)
 app.use(cors());
 app.use(bodyParser.json());
 
-// // LOGIN PAGE
-// app.post('/login', async(req, res) => {
-//     const { email, password } = req.body;
+// LOGIN PAGE
+app.get('/LogIn', async (req,res) => {
+    try {
+        const { data, error } = await supabase
+            .from('User')
+            .select('*'); // Select all columns
 
-//     const {User, error} = await supabase.auth.signIn({
-//         user_email: email,
-//         user_password: password
-//     });
+        // Throw error if select operation failed
+        if (error) throw error;
 
-//     if(error) {
-//         res.status(401).json({ error: error.message });
-//     } else {
-//         res.status(200).json({ message: 'Login in successfully.', User})
-//     }
-// })
+        // Send data as response
+        res.status(200).json(data);
+
+    } catch(error) {
+        // Send error message as response
+        res.status(500).json({ error: error.message });
+    }
+});
 
 
 //SIGN UP PAGE

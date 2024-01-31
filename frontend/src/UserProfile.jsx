@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 
 function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
-  const [userName, setUserName] = useState("Alexis Wolen");
+  const [userName, setUserName] = useState("Ahmad bin Abu");
   const [userTitle, setUserTitle] = useState("UI Designer");
   const [aboutMe, setAboutMe] = useState(
     "I’m a product designer + filmmaker currently working remotely at Twitter from beautiful Manchester, United Kingdom. I’m passionate about designing digital products that have a positive impact on the world."
   );
-  const [email, setEmail] = useState("jakegyll@email.com");
-  const [type, setType] = useState("Deaf");
+  const [email, setEmail] = useState("AhmadA@email.com");
+  const [type, setType] = useState("Hearing Impairment");
   const [profileImage, setProfileImage] = useState(UserImage);
 
   const handleSave = () => {

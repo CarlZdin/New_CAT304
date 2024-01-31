@@ -48,11 +48,11 @@ function JobDesc() {
             </div>
 
             <div className="jobdescinfo">
-              <div className="jobtitle">Social Media Assistant</div>
+              <div className="jobtitle">Software Engineer</div>
 
               <div className="additionaljobinfo">
-                <div className="companyname">Stripe</div>
-                <div className="location">Los Angeles</div>
+                <div className="companyname">TechCorp</div>
+                <div className="location">Kulim, Kedah</div>
                 <div className="worktype">Full-time</div>
               </div>
             </div>
@@ -69,7 +69,7 @@ function JobDesc() {
           <div className="job-detailed">
             <span className="jobinfo-title">Description</span>
             <p className="desc-detail">
-              Stripe is looking for Social Media Marketing expert to help manage
+              TechCorp is looking for Social Media Marketing expert to help manage
               our online networks. You will be responsible for monitoring our
               social media channels, creating content, finding effective ways to
               engage the community and incentivize others to engage on our
@@ -81,7 +81,7 @@ function JobDesc() {
                 Community engagement to ensure that is supported and actively
                 represented online
               </li>
-              <li>Focus on social media content development and publication</li>
+              <li>Focus on software development and publication</li>
               <li>Marketing and strategy support</li>
               <li>
                 Stay on top of trends on social media platforms, and suggest
