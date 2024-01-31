@@ -10,21 +10,21 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey)
 app.use(cors());
 app.use(bodyParser.json());
 
-// LOGIN PAGE
-app.post('/login', async(req, res) => {
-    const { email, password } = req.body;
+// // LOGIN PAGE
+// app.post('/login', async(req, res) => {
+//     const { email, password } = req.body;
 
-    const {User, error} = await supabase.auth.signIn({
-        user_email: email,
-        user_password: password
-    });
+//     const {User, error} = await supabase.auth.signIn({
+//         user_email: email,
+//         user_password: password
+//     });
 
-    if(error) {
-        res.status(401).json({ error: error.message });
-    } else {
-        res.status(200).json({ message: 'Login in successfully.', User})
-    }
-})
+//     if(error) {
+//         res.status(401).json({ error: error.message });
+//     } else {
+//         res.status(200).json({ message: 'Login in successfully.', User})
+//     }
+// })
 
 
 //SIGN UP PAGE
@@ -61,7 +61,26 @@ app.post('/PostJob', async (req, res) => {
     }
 });
 
-//Add feedback
+//Show Job
+app.get('/ShowJob', async (req,res) => {
+    try {
+        const { data, error } = await supabase
+            .from('Job')
+            .select('*'); // Select all columns
+
+        // Throw error if select operation failed
+        if (error) throw error;
+
+        // Send data as response
+        res.status(200).json(data);
+
+    } catch(error) {
+        // Send error message as response
+        res.status(500).json({ error: error.message });
+    }
+});
+
+//Add feedback 
 app.post('/addFeedback', async(req ,res) => {
     const { feedback } = req.body;
     const { data, error } = await supabase
@@ -76,18 +95,22 @@ app.post('/addFeedback', async(req ,res) => {
     }
 });
 
-//Edit User Profile
-app.post('/EditUserProfile', async(req ,res) => {
-    const { feedback } = req.body;
-    const { data, error } = await supabase
-    .from('Feedback')
-    .insert([{ feedback_desc: feedback },]);
-    if (error) {
-        console.error('Error submitting feedback: ', error);
-        res.status(500).send("Error submitting feedback.")
-    } else {
-        console.log('Feedback submitted: ', data);
-        res.send(data);
+// Feedback admin
+app.get('/api/feedbacks', async (req,res) => {
+    try {
+        const { data, error } = await supabase
+            .from('Feedback')
+            .select('*'); // Select all columns
+
+        // Throw error if select operation failed
+        if (error) throw error;
+
+        // Send data as response
+        res.status(200).json(data);
+
+    } catch(error) {
+        // Send error message as response
+        res.status(500).json({ error: error.message });
     }
 });
 

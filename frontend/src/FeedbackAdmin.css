@@ -18,3 +18,10 @@
     font-weight: 800;
     margin: 30px;
 }
+
+.feedbackBox {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+}
